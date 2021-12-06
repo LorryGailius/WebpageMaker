@@ -1,0 +1,42 @@
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.mb_auto{
+  margin-bottom: 20px;
+}
+.optionai{
+  align-items: right;
+}
+html, body {
+    min-height: 100%;
+}
+body { background-color: dodgerblue; }
+.blokas1{
+  margin: 100px 100px 100px 100px;
+}
+table{
+  border:1px solid black;
+}
+.langeliai{
+  padding: auto;
+}
+.centravimas {
+  display: flex;
+  align-items: center;
+}
+.teksto_stilius{
+  font-family: 'Corinthia', cursive;
+  text-size:24px;
+}
+.selectorius1{
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+.spalva{
+  color:#cc9900;
+  font-family: 'Raleway', sans-serif;
+}
