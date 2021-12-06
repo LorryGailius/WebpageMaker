@@ -3,7 +3,8 @@
 
 void Func(int x);
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv) 
+{
 	printf("Puslapis!");
 	return EXIT_SUCCESS;
 }
