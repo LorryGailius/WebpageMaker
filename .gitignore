@@ -1,7 +1,2 @@
-<<<<<<< Updated upstream
-build
-.vscode
-=======
 build/*
-.vscode/
->>>>>>> Stashed changes
+.vscode/*
