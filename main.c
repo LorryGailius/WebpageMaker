@@ -4,7 +4,7 @@
 int main()
 {
 
-    int name[] = "WebpageMaker";
+    char name[] = "WebpageMaker";
 
 
 
