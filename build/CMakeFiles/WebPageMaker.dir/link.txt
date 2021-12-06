@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\WebPageMaker.dir/objects.a
+C:\MinGW\bin\ar.exe qc CMakeFiles\WebPageMaker.dir/objects.a @CMakeFiles\WebPageMaker.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe  -std=c99 -Wall -Wextra -Wpedantic -Wl,--whole-archive CMakeFiles\WebPageMaker.dir/objects.a -Wl,--no-whole-archive -o WebPageMaker.exe -Wl,--out-implib,libWebPageMaker.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\WebPageMaker.dir\linklibs.rsp

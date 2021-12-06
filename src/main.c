@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 {
 	printf("Puslapis!");
 	
-    int x = 10;
+    int x = 5;
     Func(x);
     
     return EXIT_SUCCESS;
