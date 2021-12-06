@@ -1,10 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int main()
-{
-
-    char name[] = "WebpageMaker";
-
-
+int main(int argc, char **argc) {
+	printf("Puslapis!");
+	return EXIT_SUCCESS;
 }
