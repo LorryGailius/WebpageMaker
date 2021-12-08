@@ -1,0 +1,45 @@
+.main_uzrasas{
+  padding-top: 50px;
+  color: Black;
+  text-align:center;
+  font-size:3rem;
+  font-family: 'Roboto Mono', monospace;
+
+}
+body{
+  background-color: #ffd480;
+}
+.btn{
+  height: 30px;
+  align-items:center;
+  text-align:center;
+  background-color: #ffd480;
+}
+#circle {
+   width: 50px;
+   height: 50px;
+   -webkit-border-radius: 25px;
+   -moz-border-radius: 25px;
+   border-radius: 25px;
+   background: black;
+}
+.photo{
+  padding-left: 300px;
+  width: 400px;
+  height: 250px;
+  float: 50%;
+
+}
+.first-txt {
+align-items: center;
+text-align:center;
+font-family: 'Roboto Mono', monospace;
+
+        }
+
+.second-txt {
+font-family: 'Roboto Mono', monospace;
+
+
+  width: 400px;
+}
