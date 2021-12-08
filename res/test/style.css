@@ -130,3 +130,43 @@ body {
         left: 0%;
     }
 }
+
+footer{
+    position: absolute;
+    bottom: 100;
+    left: 0;
+    right: 0;
+    background: #171717;
+    height: auto;
+    width: 100vw;
+    padding-top: 0px;
+    color: white;
+}
+
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3{
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.footer-content p{
+	margin-bottom: 50px;
+    font-size: 14px;
+    color: #cacdd2;
+}
+
+.footer-content a{
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px solid white;
+    padding: 5px;
+}
