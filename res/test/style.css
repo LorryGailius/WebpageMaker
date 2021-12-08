@@ -100,6 +100,11 @@ body {
     border-radius: 6px;
 }
 
+.content:hover{
+	transform: scale(1.1);
+	
+}
+
 /* Media queries */
 @media screen and (max-width: 600px) {
     .timeline::after {
@@ -141,6 +146,7 @@ footer{
     width: 100vw;
     padding-top: 0px;
     color: white;
+	z-index: -1;
 }
 
 .footer-content{
