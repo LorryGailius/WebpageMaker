@@ -138,12 +138,13 @@ body {
 
 footer{
     position: absolute;
+	clear: both;
     bottom: 100;
     left: 0;
     right: 0;
     background: #171717;
     height: auto;
-    width: 100vw;
+    box-sizing: border-box;
     padding-top: 0px;
     color: white;
 	z-index: -1;
