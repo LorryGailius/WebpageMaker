@@ -48,6 +48,7 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     background-color: inherit;
     width: 50%;
+	
 }
 
 /* The circles on the timeline */
