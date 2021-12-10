@@ -1,6 +1,6 @@
 #include <timeline.h>
 
-HTML_doc_t *create_timeline(size_t post_cnt) {
+HTML_doc_t *create_timeline_html(size_t post_cnt) {
 
     elem_t* head_elems[2];
     head_elems[0] = create_tag_element(TAG_META);
@@ -60,7 +60,7 @@ HTML_doc_t *create_timeline(size_t post_cnt) {
         push_element(inside_div, img);
 
         elem_t *outside_div = create_tag_element(TAG_DIV);
-        const char *val = ((i % 2) == 0)? "container left":"containter right";
+        const char *val = ((i % 2) == 0)? "container left":"container right";
         attr_t *odiv_class = create_attribute(ATTR_CLASS, val);
         push_element_attribute(outside_div, odiv_class);
         push_element(outside_div, inside_div);
@@ -69,4 +69,8 @@ HTML_doc_t *create_timeline(size_t post_cnt) {
 
     HTML_doc_t *doc = create_doc(head_elems, 2, body_elems, 3);
     return doc;
+}
+
+css_doc_t *create_timeline_css() {
+    return NULL;
 }

@@ -25,20 +25,6 @@ const char *attr_table[ATTR_NUM] = {
     "rel"
 };
 
-FILE *logger = NULL;
-
-void init_logger(const char* file_name) {
-    logger = fopen(file_name, "wb");
-    if(logger == NULL) {
-        printf("init_logger(): Failed to create logger file, logger set to stdout!\n");
-        logger = stdout;
-    }
-}
-
-void close_logger() {
-    fclose(logger);
-}
-
 attr_t* create_attribute(uint8_t attr_index, const char* value) {
     attr_t *attr = (attr_t*) malloc(sizeof(attr_t));
     if(attr == NULL) {
@@ -219,15 +205,4 @@ void print_element(elem_t *element, FILE *const os, uint8_t ident_level) {
         print_idents(ident_level, os);
         fprintf(os, "</%s>\n", tag_table[element->tag_index]);
     }
-}
-
-void print_idents(uint8_t ident_level, FILE *const os) {
-    for(uint8_t i = 0; i < ident_level; ++i) {
-        fputc('\t', os);
-    }
-}
-
-void log_msg(const char* msg) {
-    fprintf(logger, "[%s] %s\n", __TIME__, msg);
-    fflush(logger);
 }

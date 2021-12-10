@@ -4,12 +4,15 @@
 #ifndef HTML_DOC_H
 #define HTML_DOC_H
 
+// system headers
 #include <stdint.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+// user headers
+#include <logger.h>
+#include <file_utils.h>
 
-#include <assert.h>
 // tag indices
 #define TAG_NONE    0
 #define TAG_HTML	1
@@ -38,11 +41,6 @@
 // tag and attribute string tables
 extern const char *tag_table[TAG_NUM];
 extern const char *attr_table[ATTR_NUM];
-
-// log file handle
-extern FILE *logger;
-void init_logger(const char* file_name);
-void close_logger();
 
 // HTML attribute structure
 typedef struct attr_t {
@@ -100,8 +98,5 @@ void destroy_doc(HTML_doc_t *doc);
 // printing
 void print_doc(HTML_doc_t *doc, FILE *os);
 void print_element(elem_t *element, FILE *const os, uint8_t ident_level);
-void print_idents(uint8_t ident_level, FILE *const os);
-
-void log_msg(const char* msg);
 
 #endif /* HTML_DOC_H */
