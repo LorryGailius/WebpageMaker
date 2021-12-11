@@ -48,7 +48,6 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     background-color: inherit;
     width: 50%;
-	
 }
 
 /* The circles on the timeline */
@@ -113,11 +112,11 @@ body::-webkit-scrollbar-thumb {
 	background: linear-gradient(120deg, #241951 0%, #382d6b 80%);
     position: relative;
     border-radius: 6px;
+	transition: transform ease-out 150ms;
 }
 
 .content:hover{
 	transform: scale(1.1);
-	
 }
 
 /* Media queries */
