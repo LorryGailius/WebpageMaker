@@ -70,7 +70,3 @@ HTML_doc_t *create_timeline_html(size_t post_cnt) {
     HTML_doc_t *doc = create_doc(head_elems, 2, body_elems, 3);
     return doc;
 }
-
-css_doc_t *create_timeline_css() {
-    return NULL;
-}
