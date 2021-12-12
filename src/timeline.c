@@ -1,7 +1,6 @@
 #include <timeline.h>
 
 HTML_doc_t *create_timeline_html(size_t post_cnt) {
-
     elem_t* head_elems[3];
     head_elems[0] = create_tag_element(TAG_META);
     head_elems[1] = create_tag_element(TAG_LINK);
@@ -36,7 +35,6 @@ HTML_doc_t *create_timeline_html(size_t post_cnt) {
             log_msg("create_timeline_html(): /bin/style.css could not be read.");
         } else {
             log_msg("create_timeline_html(): /bin/style.css has been read.");
-
         }
         fclose(css_file);
         log_msg("create_timeline_html(): /bin/style.css has been closed.");
@@ -92,5 +90,10 @@ HTML_doc_t *create_timeline_html(size_t post_cnt) {
     }
 
     HTML_doc_t *doc = create_doc(head_elems, 3, body_elems, 3);
+    if(doc == NULL) {
+        log_msg("create_timeline_html(): doc could not be created, returned NULL.");
+        return NULL;
+    }
+    log_msg("create_timeline_html(): doc successfully created.");
     return doc;
 }
