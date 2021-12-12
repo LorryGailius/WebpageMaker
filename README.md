@@ -12,7 +12,7 @@ The data file should **always** contain the following data:
 - Timeline title
 - Timeline description
 
-### Additional info###
+### Additional info ###
 The program works by parsing different data on a single time point. Each data segment (after Title and Description) is considered the data of a particular time point. Each time point ***requires*** specific data:
 - Time point name (ex. `2020`, `Christmas`, etc.)
 - Time point description (ex. `The year of a pandemic`, `Christmas is an annual festival`, etc.)
