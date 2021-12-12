@@ -1,5 +1,5 @@
 # __Web page maker__
-This program allows you to create a custom timline website
+This program allows you to create a custom timeline website
 ## __How to use__
 When launching this application, provide a data file name as a parameter:
 ```powershell
@@ -8,10 +8,15 @@ When launching this application, provide a data file name as a parameter:
 ## __Data file format__
 
 ### Data file contents ###
-The data file should contain the following data:
+The data file should ***always*** contain the following data:
 - Timeline title
 - Timeline description
-- Information about each timepoint 
+
+### Additional info###
+The program works by parsing different data on a single time point. Each data segment (after Title and Description) is considered the data of a particular time point. Each time point ***requires*** specific data:
+- Time point name (ex. `2020`, `Christmas`, etc.)
+- Time point description (ex. `The year of a pandemic`, `Christmas is an annual festival`, etc.)
+- Time point image (ex. `1.jpg`, `718110.png`, etc.)
 
 ### Data format ###
 Each piece of information should be separated by a **semicolon**
