@@ -3,26 +3,48 @@ This program allows you to create a custom timline website
 ## __How to use__
 When launching this application, provide a file with data about the timeline:
 ```powershell
-./WebPageMaker data.txt
+./WebPageMaker.exe data.txt
 ```
 ## __Data file format__
 
-### data file contents ###
+### Data file contents ###
 The data file should contain the following data:
 - Timeline title
 - Timeline description
 - Information about each timepoint 
 
-### data format ###
-Each piece of information should be separated by a semicolon
+### Data format ###
+Each piece of information should be separated by a **semicolon**
 ```
-title;description;
-timepoint_title1;timepoint_description1;timepoint_photo1;
-timepoint_title2;timepoint_description2;timepoint_photo2;
+Title;Description;
+Timepoint_title1;Timepoint_description1;Timepoint_photo1;
+Timepoint_title2;Timepoint_description2;Timepoint_photo2;
+Timepoint_title3;Timepoint_description3;Timepoint_photo3;
+...
+```
+
+### Alternate behaviors ###
+Entering a `-` into a slot will not show the particular slot on a page:
+```
+Title;Description;
+Timepoint_title1;-;Timepoint_photo1;
+Timepoint_title2;Timepoint_description2;-;
+-;Timepoint_description3;Timepoint_photo3;
+-;-;-;
+...
+```
+
+Leaving all three slots empty `-;-;-;` will move the next post to the same side as the previous
+```
+Title;Description;
+Timepoint_title1;Timepoint_description1;Timepoint_photo1; <- is left
+-;-;-; <- empty block
+Timepoint_title3;Timepoint_description3;Timepoint_photo3; <- is left as well
 ```
 
 ## __How to build__
-Run these commands in directory containing CMakeLists.txt
+If trying to compile from github repository, CMake is required, use `winget install CMake` in powershell. 
+If CMake is already installed run these commands in directory containing **CMakeLists.txt**
 ```powershell
 cmake -D CMAKE_C_COMPILER=<path-to-gcc> -G "MinGW Makefiles" -S . -B build/
 cd build
