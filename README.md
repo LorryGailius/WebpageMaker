@@ -16,24 +16,31 @@ The data file should contain the following data:
 ### Data format ###
 Each piece of information should be separated by a **semicolon**
 ```
-title;description;
-timepoint_title1;timepoint_description1;timepoint_photo1;
-timepoint_title2;timepoint_description2;timepoint_photo2;
-timepoint_title3;timepoint_description3;timepoint_photo3;
+Title;Description;
+Timepoint_title1;Timepoint_description1;Timepoint_photo1;
+Timepoint_title2;Timepoint_description2;Timepoint_photo2;
+Timepoint_title3;Timepoint_description3;Timepoint_photo3;
 ...
 ```
 
 ### Alternate behaviors ###
-Entering a **'-'** into a slot will not show the particular slot on a page:
+Entering a `-` into a slot will not show the particular slot on a page:
 ```
-title;description;
--;timepoint_description1;timepoint_photo1;
-timepoint_title2;timepoint_description2;-;
-timepoint_title3;-;timepoint_photo3;
+Title;Description;
+Timepoint_title1;-;Timepoint_photo1;
+Timepoint_title2;Timepoint_description2;-;
+-;Timepoint_description3;Timepoint_photo3;
+-;-;-;
 ...
 ```
 
-
+Leaving all three slots empty `-;-;-;` will move the next post to the same side as the previous
+```
+Title;Description;
+Timepoint_title1;Timepoint_description1;Timepoint_photo1; <- is left
+-;-;-; <- empty block
+Timepoint_title3;Timepoint_description3;Timepoint_photo3; <- is left as well
+```
 
 ## __How to build__
 If trying to compile from github repository, CMake is required, use `winget install CMake` in powershell. 
