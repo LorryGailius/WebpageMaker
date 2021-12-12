@@ -20,8 +20,8 @@ HTML_doc_t *create_timeline_html(char *title, char *description, data_t *data, s
 
     push_element_attribute(head_elems[1], link_attr[0]);
     push_element_attribute(head_elems[1], link_attr[1]);
-
-    elem_t *title_elem = create_text_element(title);
+        
+    elem_t *title_elem = create_text_element(title ? title : "");
     push_element(head_elems[2], title_elem);
 
     FILE *css_file = fopen("bin/style.css", "rb");
@@ -53,12 +53,12 @@ HTML_doc_t *create_timeline_html(char *title, char *description, data_t *data, s
         create_tag_element(TAG_FOOTER)
     };
 
-    elem_t *h_text = create_text_element(title);
+    elem_t *h_text = create_text_element(title ? title : "");
     attr_t *h_attr = create_attribute(ATTR_STYLE, "text-align: center; padding-top: 1%;color:white;font-size:350%;");
     push_element_attribute(body_elems[0], h_attr);
     push_element(body_elems[0], h_text);
 
-    elem_t *d_text = create_text_element(description);
+    elem_t *d_text = create_text_element(description ? description : "");
     attr_t *d_attr = create_attribute(ATTR_STYLE, "text-align: center; padding-bottom: 5%;color:white;");
     push_element_attribute(body_elems[1], d_attr);
     push_element(body_elems[1], d_text);

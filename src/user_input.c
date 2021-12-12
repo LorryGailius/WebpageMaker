@@ -1,4 +1,5 @@
 #include <user_input.h>
+#include <assert.h>
 
 int getInput(int argc, char **argv, data_t **data, char **title, char **desc, int *size)
 {
@@ -34,6 +35,7 @@ void readFile(FILE *input, data_t *data, char **title, char **desc, int *size)
     size_t input_size = ftell(input);
     rewind(input);
     char buffer[input_size];
+    memset(buffer, 0, input_size);
     fread(buffer, sizeof(char), input_size, input);
     char delim[] = ";\r\n";
 
@@ -42,14 +44,21 @@ void readFile(FILE *input, data_t *data, char **title, char **desc, int *size)
     // Timeline title
     if (token)
     {
-        *title = (char *)malloc(sizeof(char) * strlen(token));
-        if (strcmp(*title, "-") == 0)
+        if (strcmp(token, "-") == 0)
         {
             *title = NULL;
         }
         else
         {
-            strcpy(*title,token);
+            *title = (char *)malloc(sizeof(char) * (strlen(token) + 1));
+            if (*title == NULL)
+            {
+                printf("Oops! Something went wrong. Better luck next time ;)\n");
+            }
+            else
+            {
+                strcpy(*title, token);
+            }
         }
         token = strtok(NULL, delim);
     }
@@ -57,14 +66,22 @@ void readFile(FILE *input, data_t *data, char **title, char **desc, int *size)
     // Timeline description
     if (token)
     {
-        *desc = (char *)malloc(sizeof(char) * strlen(token));
-        if (strcmp(*desc, "-") == 0)
+        
+        if (strcmp(token, "-") == 0)
         {
             *desc = NULL;
         }
         else
         {
-            strcpy(*desc,token);
+            *desc = (char *)malloc(sizeof(char) * (strlen(token) + 1));
+            if (*desc == NULL)
+            {
+                printf("Oops! Something went wrong. Better luck next time ;)\n");
+            }
+            else
+            {
+                strcpy(*desc, token);
+            }
         }
         token = strtok(NULL, delim);
     }
@@ -80,13 +97,21 @@ void readFile(FILE *input, data_t *data, char **title, char **desc, int *size)
             }
             else
             {
-                data[i].header = (char *)malloc(sizeof(char) * strlen(token));
-                strcpy(data[i].header, token);
+                data[i].header = (char *)malloc(sizeof(char) * (strlen(token) + 1));
+                if (data[i].header == NULL)
+                {
+                    printf("Oops! Something went wrong. Better luck next time ;)\n");
+                }
+                else
+                {
+                    strcpy(data[i].header, token);
+                }
             }
             token = strtok(NULL, delim);
         }
 
         //Description
+        
         if (token)
         {
             if (strcmp(token, "-") == 0)
@@ -95,12 +120,20 @@ void readFile(FILE *input, data_t *data, char **title, char **desc, int *size)
             }
             else
             {
-                data[i].description = (char *)malloc(sizeof(char) * strlen(token));
-                strcpy(data[i].description, token);
+                data[i].description = (char *)malloc(sizeof(char) * (strlen(token) + 1));
+                
+                if (data[i].description == NULL)
+                {
+                    printf("Oops! Something went wrong. Better luck next time ;)\n");
+                }
+                else
+                {
+                    strcpy(data[i].description, token);
+                }
             }
+            
             token = strtok(NULL, delim);
         }
-
         //Image
         if (token)
         {
@@ -110,10 +143,18 @@ void readFile(FILE *input, data_t *data, char **title, char **desc, int *size)
             }
             else
             {
-                data[i].image = (char *)malloc(sizeof(char) * strlen(token));
-                strcpy(data[i].image, token);
+                data[i].image = (char *)malloc(sizeof(char) * strlen(token) + 1);
+                if (data[i].image == NULL)
+                {
+                    printf("Oops! Something went wrong. Better luck next time ;)\n");
+                }
+                else
+                {
+                    strcpy(data[i].image, token);
+                }
             }
             token = strtok(NULL, delim);
+            printf("Next Token is: %s\n",token);
             (*size)++;
         }
 
