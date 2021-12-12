@@ -26,7 +26,8 @@
 #define TAG_H2		9
 #define TAG_PAR		10
 #define TAG_H3		11
-#define TAG_NUM		12
+#define TAG_STYLE	12
+#define TAG_NUM		13
 
 // attribute indices
 #define ATTR_CONTENT	0

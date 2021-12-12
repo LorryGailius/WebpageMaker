@@ -2,9 +2,10 @@
 
 HTML_doc_t *create_timeline_html(size_t post_cnt) {
 
-    elem_t* head_elems[2];
+    elem_t* head_elems[3];
     head_elems[0] = create_tag_element(TAG_META);
     head_elems[1] = create_tag_element(TAG_LINK);
+    head_elems[2] = create_tag_element(TAG_STYLE);
 
     attr_t *meta_attr[2];
     meta_attr[0] = create_attribute(ATTR_NAME, "viewport");
@@ -20,6 +21,29 @@ HTML_doc_t *create_timeline_html(size_t post_cnt) {
     push_element_attribute(head_elems[1], link_attr[0]);
     push_element_attribute(head_elems[1], link_attr[1]);
 
+    FILE *css_file = fopen("bin/style.css", "rb");
+    char *src = NULL;
+    if(css_file == NULL) {
+        log_msg("create_timeline_html(): /bin/style.css is missing.");
+    } else {
+        log_msg("create_timeline_html(): opened /bin/style.css");
+        fseek(css_file, 0, SEEK_END);
+        size_t src_size = ftell(css_file);
+        rewind(css_file);
+        src = (char*) malloc(src_size);
+        size_t read = fread(src, sizeof(char), src_size, css_file);
+        if(read != src_size) {
+            log_msg("create_timeline_html(): /bin/style.css could not be read.");
+        } else {
+            log_msg("create_timeline_html(): /bin/style.css has been read.");
+
+        }
+        fclose(css_file);
+        log_msg("create_timeline_html(): /bin/style.css has been closed.");
+    }
+    
+    elem_t *style_src = create_text_element(src);
+    push_element(head_elems[2], style_src);
     elem_t *body_elems[3] = {
         create_tag_element(TAG_H1),
         create_tag_element(TAG_H3),
@@ -67,6 +91,6 @@ HTML_doc_t *create_timeline_html(size_t post_cnt) {
         push_element(body_elems[2], outside_div);
     }
 
-    HTML_doc_t *doc = create_doc(head_elems, 2, body_elems, 3);
+    HTML_doc_t *doc = create_doc(head_elems, 3, body_elems, 3);
     return doc;
 }

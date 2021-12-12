@@ -12,7 +12,8 @@ const char *tag_table[TAG_NUM] = {
     "h1",
     "h2",
     "p",
-    "h3"
+    "h3",
+    "style"
 };
 
 const char *attr_table[ATTR_NUM] = {

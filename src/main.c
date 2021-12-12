@@ -4,21 +4,15 @@
 #include <timeline.h>
 
 int main(int argc, char **argv) {
+
     init_logger("logs.txt");
 
-    /*FILE *html_file = fopen("index.html", "wb");
+    FILE *html_file = fopen("index.html", "wb");
     HTML_doc_t *html = create_timeline_html(3);
     print_doc(html, html_file);
     destroy_doc(html);
-    fclose(html_file);*/
+    fclose(html_file);
 
-    FILE* file = fopen("data.txt", "rb");
-    if(file == NULL) {
-        log_msg("could not open file.");
-    }
     close_logger();
-
-    
-
     return EXIT_SUCCESS;
 }
