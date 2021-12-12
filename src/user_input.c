@@ -1,6 +1,6 @@
 #include <user_input.h>
 
-void getInput(int argc, char **argv, data_t **data, char **title, char **desc, int *size)
+int getInput(int argc, char **argv, data_t **data, char **title, char **desc, int *size)
 {
     if (argc == 2)
     {
@@ -9,7 +9,7 @@ void getInput(int argc, char **argv, data_t **data, char **title, char **desc, i
         if (input == NULL)
         {
             printf("File could not be opened!\n");
-            return;
+            return 0;
         }
         *data = (data_t *)malloc(MAX_DATA_POINTS * sizeof(data));
         readFile(input, *data, title, desc, size);
@@ -17,12 +17,12 @@ void getInput(int argc, char **argv, data_t **data, char **title, char **desc, i
     else if (argc == 1)
     {
         printf("No data file name given! Check \"README.md\" for more information!\n");
-        return;
+        return 0;
     }
     else
     {
         printf("Too many arguments!\n");
-        return;
+        return 0;
     }
 }
 

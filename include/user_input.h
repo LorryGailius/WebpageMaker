@@ -14,7 +14,7 @@ typedef struct data{
     char* image;
 }data_t;
 
-void getInput(int argc, char **argv, data_t **data, char **title, char **desc, int *size);
+int getInput(int argc, char **argv, data_t **data, char **title, char **desc, int *size);
 
 void readFile(FILE *input, data_t *data, char **title, char **desc, int *size);
 
