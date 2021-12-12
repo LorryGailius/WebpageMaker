@@ -140,6 +140,7 @@ body::-webkit-scrollbar-thumb {
 
 .content:hover{
 	transform: scale(1.1);
+	z-index: 10;
 }
 
 /* Media queries */
@@ -160,7 +161,7 @@ body::-webkit-scrollbar-thumb {
     left: 60px;
         border: medium solid white;
         border-width: 10px 10px 10px 0;
-        border-color: transparent white transparent transparent;
+		border-color: transparent #241951 transparent transparent;
     }
 
 
