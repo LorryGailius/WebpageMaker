@@ -12,8 +12,6 @@ int main(int argc, char **argv) {
     int pointNum = 0;
 
     getInput(argc, argv, &dataPoints, &title, &description, &pointNum);
-    
-    freeInput(dataPoints, title, description, pointNum);
 
     init_logger("logs.txt");
 
@@ -22,7 +20,7 @@ int main(int argc, char **argv) {
     print_doc(html, html_file);
     destroy_doc(html);
     fclose(html_file);
-
+    freeInput(dataPoints, title, description, pointNum);
     close_logger();
     return EXIT_SUCCESS;
 }

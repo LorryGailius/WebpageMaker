@@ -28,13 +28,13 @@ void getInput(int argc, char **argv, data_t **data, char **title, char **desc, i
 
 void readFile(FILE *input, data_t *data, char **title, char **desc, int *size)
 {
+    *size = 0;
     fseek(input, 0, SEEK_END);
     size_t input_size = ftell(input);
     rewind(input);
     char buffer[input_size];
-
     fread(buffer, sizeof(char), input_size, input);
-    char delim[] = ";\n\r";
+    char delim[] = ";\r\n";
 
     char *token = strtok(buffer, delim);
 
@@ -112,10 +112,10 @@ void readFile(FILE *input, data_t *data, char **title, char **desc, int *size)
                 data[i].image = (char *)malloc(sizeof(char) * strlen(token));
                 strcpy(data[i].image, token);
             }
+            token = strtok(NULL, delim);
+            (*size)++;
         }
 
-        token = strtok(NULL, delim);
-        *size = i + 1;
     }
 }
 
