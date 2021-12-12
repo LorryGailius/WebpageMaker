@@ -1,7 +1,7 @@
 # __Web page maker__
 This program allows you to create a custom timline website
 ## __How to use__
-When launching this application, provide a file with data about the timeline:
+When launching this application, provide a data file name as a parameter:
 ```powershell
 ./WebPageMaker.exe data.txt
 ```
@@ -23,7 +23,7 @@ Timepoint_title3;Timepoint_description3;Timepoint_photo3;
 ...
 ```
 
-### Alternate behaviors ###
+### __Alternate behaviors__ ###
 Entering a `-` into a slot will not show the particular slot on a page:
 ```
 Title;Description;
