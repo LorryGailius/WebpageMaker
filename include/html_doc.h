@@ -7,6 +7,7 @@
 // system headers
 #include <stdint.h>
 #include <string.h>
+#include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>
 // user headers
@@ -27,7 +28,9 @@
 #define TAG_PAR		10
 #define TAG_H3		11
 #define TAG_STYLE	12
-#define TAG_NUM		13
+#define TAG_TITLE	13
+#define TAG_FOOTER	14
+#define TAG_NUM		15
 
 // attribute indices
 #define ATTR_CONTENT	0

@@ -13,7 +13,9 @@ const char *tag_table[TAG_NUM] = {
     "h2",
     "p",
     "h3",
-    "style"
+    "style",
+    "title",
+    "footer"
 };
 
 const char *attr_table[ATTR_NUM] = {
@@ -173,6 +175,7 @@ void print_doc(HTML_doc_t *doc, FILE *os) {
         log_msg("print_doc(): doc->html is NULL, function terminated");
         return;
     }
+    
     print_element(doc->html, os, 0);
 }
 
@@ -181,13 +184,19 @@ void print_element(elem_t *element, FILE *const os, uint8_t ident_level) {
         log_msg("print_element(): element is NULL, function terminated!");
         return;
     }
+    
     // decide if it's a tag or text element
     if(element->text != NULL) {
         // print idents
+         
         print_idents(ident_level, os);
+        
         fprintf(os, "%s\n", element->text);
+        fflush(os);
     }
+   
     else {
+        
         // it's a tag
         // print opening tag
         print_idents(ident_level, os);
