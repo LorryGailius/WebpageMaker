@@ -45,9 +45,9 @@ Timepoint_title2;Timepoint_description2;-;
 Leaving all three slots empty `-;-;-;` will move the next time point to the same side as the previous
 ```
 Timeline Title;Timeline Description;
-Timepoint_title1;Timepoint_description1;Timepoint_photo1; <- is left
--;-;-; <- empty block
-Timepoint_title3;Timepoint_description3;Timepoint_photo3; <- is left as well
+Timepoint_title1;Timepoint_description1;Timepoint_photo1;
+-;-;-;
+Timepoint_title3;Timepoint_description3;Timepoint_photo3;
 ...
 ```
 
