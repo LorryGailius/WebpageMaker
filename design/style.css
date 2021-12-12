@@ -88,15 +88,6 @@ body::-webkit-scrollbar-thumb {
     border-color: transparent transparent transparent #352a67;
 	transition: transform ease-out 150ms;
 }
-
-.left:hover:before{
-	transform: scale(0);
-}
-
-.right:hover:before{
-	transform: scale(0);
-}
-
 /* Add arrows to the right container (pointing left) */
 .right::before {
     content: " ";
@@ -115,6 +106,16 @@ body::-webkit-scrollbar-thumb {
 .right::after {
     left: -16px;
 }
+
+/* Make arrows dissapear if hovering over element*/
+.left:hover:before{
+	transform: scale(0);
+}
+
+.right:hover:before{
+	transform: scale(0);
+}
+
 
 /* Content box */
 .content {
