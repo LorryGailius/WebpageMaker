@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
     data_t *dataPoints = NULL;
     char *title = NULL; 
     char *description = NULL;
-    int pointNum = 0;
+    int pointNum = 0; 
 
     if(getInput(argc, argv, &dataPoints, &title, &description, &pointNum) == 0) return EXIT_SUCCESS;
 
