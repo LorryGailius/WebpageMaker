@@ -13,6 +13,7 @@ int getInput(int argc, char **argv, data_t **data, char **title, char **desc, in
         }
         *data = (data_t *)malloc(MAX_DATA_POINTS * sizeof(data));
         readFile(input, *data, title, desc, size);
+        return 1;
     }
     else if (argc == 1)
     {
