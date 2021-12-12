@@ -19,7 +19,7 @@ The program works by parsing different data on a single time point. Each data se
 - Time point image (ex. `1.jpg`, `718110.png`, etc.)
 
 **Incorrectly entered data leads to undefined behavior!**  
-**Make sure to read correct data examples below**
+**Make sure to read correct data examples below!**
 
 ### Data format ###
 Each piece of information should be separated by a **semicolon**
