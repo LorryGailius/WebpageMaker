@@ -24,7 +24,7 @@ The program works by parsing different data on a single time point. Each data se
 ### Data format ###
 Each piece of information should be separated by a **semicolon**
 ```
-Title;Description;
+Timeline Title;Timeline Description;
 Timepoint_title1;Timepoint_description1;Timepoint_photo1;
 Timepoint_title2;Timepoint_description2;Timepoint_photo2;
 Timepoint_title3;Timepoint_description3;Timepoint_photo3;
@@ -32,9 +32,9 @@ Timepoint_title3;Timepoint_description3;Timepoint_photo3;
 ```
 
 ### Alternate behaviors ###
-Entering a `-` into a slot will not show the particular slot on a page:
+Entering a `-` will not show the particular element on a page:
 ```
-Title;Description;
+Timeline Title;Timeline Description;
 Timepoint_title1;-;Timepoint_photo1;
 Timepoint_title2;Timepoint_description2;-;
 -;Timepoint_description3;Timepoint_photo3;
@@ -42,9 +42,9 @@ Timepoint_title2;Timepoint_description2;-;
 ...
 ```
 
-Leaving all three slots empty `-;-;-;` will move the next post to the same side as the previous
+Leaving all three slots empty `-;-;-;` will move the next time point to the same side as the previous
 ```
-Title;Description;
+Timeline Title;Timeline Description;
 Timepoint_title1;Timepoint_description1;Timepoint_photo1; <- is left
 -;-;-; <- empty block
 Timepoint_title3;Timepoint_description3;Timepoint_photo3; <- is left as well
