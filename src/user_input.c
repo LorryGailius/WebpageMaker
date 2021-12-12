@@ -154,7 +154,6 @@ void readFile(FILE *input, data_t *data, char **title, char **desc, int *size)
                 }
             }
             token = strtok(NULL, delim);
-            printf("Next Token is: %s\n",token);
             (*size)++;
         }
 
