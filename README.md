@@ -18,7 +18,7 @@ The program works by parsing different data on a single time point. Each data se
 - Time point description (ex. `The year of a pandemic`, `Christmas is an annual festival`, etc.)
 - Time point image (ex. `1.jpg`, `718110.png`, etc.)
 
-**Incorrectly entered data leads to undefined behavior**
+**Incorrectly entered data leads to undefined behavior!**  
 **Make sure to read correct data examples below**
 
 ### Data format ###
