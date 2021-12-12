@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
     HTML_doc_t *html = create_timeline_html(title, description, dataPoints, pointNum);
     print_doc(html, html_file);
     printf("Website created successfully!");
-    destroy_doc(html);
+    destroy_doc(html); 
     fclose(html_file);
     freeInput(dataPoints, title, description, pointNum);
     close_logger();
