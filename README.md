@@ -7,6 +7,9 @@ When launching this application, provide a data file name as a parameter:
 ```
 ## __Data file format__
 
+**Incorrectly entered data leads to undefined behavior!**  
+**Make sure to read correct data examples below!**
+
 ### Data file contents ###
 The data file should **always** contain the following data:
 - Timeline title
@@ -17,9 +20,6 @@ The program works by parsing different data on a single time point. Each data se
 - Time point name (ex. `2020`, `Christmas`, etc.)
 - Time point description (ex. `The year of a pandemic`, `Christmas is an annual festival`, etc.)
 - Time point image (ex. `1.jpg`, `718110.png`, etc.)
-
-**Incorrectly entered data leads to undefined behavior!**  
-**Make sure to read correct data examples below!**
 
 ### Data format ###
 Each piece of information should be separated by a **semicolon**
