@@ -40,6 +40,7 @@ Title;Description;
 Timepoint_title1;Timepoint_description1;Timepoint_photo1; <- is left
 -;-;-; <- empty block
 Timepoint_title3;Timepoint_description3;Timepoint_photo3; <- is left as well
+...
 ```
 
 ## __How to build__
