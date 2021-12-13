@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		</meta>
+		<title>
+			Star Wars Movie Timeline
+		</title>
+		<style>
+			* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #171717;
+    font-family: Helvetica, sans-serif;
+	overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 0.2em;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 2px solid slategrey;
+}
+
+/* Timeline Text */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+	color: white
+}
+
+/* Vertical line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    background-color: #444444;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -8px;
+    border-radius: 8px;
+}
+
+/* Container around content */
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background: linear-gradient(90deg, #241951 0%, #382d6b 80%);
+    border: 4px solid white;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Container is left */
+.left {
+    left: 0;
+}
+
+/* Container is right */
+.right {
+    left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid rgb(238, 238, 238);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #352a67;
+	transition: transform ease-out 150ms;
+}
+/* Add arrows to the right container (pointing left) */
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid rgb(238, 238, 238);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #241951 transparent transparent;
+	transition: transform ease-out 150ms;
+}
+
+.right::after {
+    left: -16px;
+}
+
+/* Make arrows dissapear if hovering over element*/
+.left:hover:before{
+	transform: scale(0);
+}
+
+.right:hover:before{
+	transform: scale(0);
+}
+
+
+/* Content box */
+.content {
+    padding: 20px 30px;
+	background: linear-gradient(120deg, #241951 0%, #382d6b 80%);
+	position: relative;
+    border-radius: 6px;
+	transition: transform ease-out 150ms;
+}
+
+.content::before{
+ content: '';
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ filter: blur(0.8em);
+ background: linear-gradient(120deg, #241951 0%, #382d6b 80%);
+ z-index: -1;
+}
+
+.content:hover{
+	transform: scale(1.1);
+	z-index: 10;
+}
+
+/* Media queries */
+@media screen and (max-width: 600px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+
+    .container::before {
+    left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+		border-color: transparent #241951 transparent transparent;
+    }
+
+
+    .left::after, .right::after {
+        left: 15px;
+    }
+
+    .right {
+        left: 0%;
+    }
+}
+
+footer{
+    position: absolute;
+	clear: both;
+    bottom: 100;
+    left: 0;
+    right: 0;
+    background: #171717;
+    height: auto;
+    box-sizing: border-box;
+    padding-top: 0px;
+    color: white;
+	z-index: -10;
+}
+
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3{
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.footer-content p{
+	margin-bottom: 50px;
+    font-size: 14px;
+    color: #cacdd2;
+}
+
+.footer-content a{
+    text-decoration: none;
+    color: #fff;
+    border: 1.1px solid white;
+    padding: 5px;
+}
+		</style>
+	</head>
+	<body>
+		<h1 style="text-align: center; padding-top: 1%;color:white;font-size:350%;">
+			Star Wars Movie Timeline
+		</h1>
+		<h3>
+		</h3>
+		<div class="timeline">
+			<div class="container left">
+				<div class="content">
+					<h2>
+						1977
+					</h2>
+					<p>
+						<b>Star Wars: Episode IV - New Hope</b>
+					</p>
+					<img src="photos\1.jpg" style="height: 100%; width: 100%; object-fit: contain;display:block;margin:auto">
+					</img>
+				</div>
+			</div>
+			<div class="container right">
+				<div class="content">
+					<h2>
+						1980
+					</h2>
+					<p>
+						<b>Star Wars: Episode V - The Empire strikes back</b>
+					</p>
+					<img src="photos\2.jpg" style="height: 100%; width: 100%; object-fit: contain;display:block;margin:auto">
+					</img>
+				</div>
+			</div>
+			<div class="container left">
+				<div class="content">
+					<h2>
+						1983
+					</h2>
+					<p>
+						<b>Star Wars: Episode VI - The Return of the Jedi</b>
+					</p>
+					<img src="photos\3.jpg" style="height: 100%; width: 100%; object-fit: contain;display:block;margin:auto">
+					</img>
+				</div>
+			</div>
+			<div class="container right">
+				<div class="content">
+					<h2>
+						1999
+					</h2>
+					<p>
+						<b>Star Wars: Episode I - The phantom menace</b>
+					</p>
+					<img src="photos\4.jpg" style="height: 100%; width: 100%; object-fit: contain;display:block;margin:auto">
+					</img>
+				</div>
+			</div>
+			<div class="container left">
+				<div class="content">
+					<h2>
+						2002
+					</h2>
+					<p>
+						<b>Star Wars: Episode II - Attack of the Clones</b>
+					</p>
+					<img src="photos\5.jpg" style="height: 100%; width: 100%; object-fit: contain;display:block;margin:auto">
+					</img>
+				</div>
+			</div>
+			<div class="container right">
+				<div class="content">
+					<h2>
+						2005
+					</h2>
+					<p>
+						<b>Star Wars: Episode III - Revenge of the Sith</b>
+					</p>
+					<img src="photos\6.jpg" style="height: 100%; width: 100%; object-fit: contain;display:block;margin:auto">
+					</img>
+				</div>
+			</div>
+			<div class="container left">
+				<div class="content">
+					<h2>
+						2015
+					</h2>
+					<p>
+						<b>Star Wars: Episode VII - The Force Awakens</b>
+					</p>
+					<img src="photos\7.jpg" style="height: 100%; width: 100%; object-fit: contain;display:block;margin:auto">
+					</img>
+				</div>
+			</div>
+			<div class="container right">
+				<div class="content">
+					<h2>
+						2017
+					</h2>
+					<p>
+						<b>Star Wars: Episode VIII - The Last Jedi</b>
+					</p>
+					<img src="photos\8.jpg" style="height: 100%; width: 100%; object-fit: contain;display:block;margin:auto">
+					</img>
+				</div>
+			</div>
+			<div class="container left">
+				<div class="content">
+					<h2>
+						2019
+					</h2>
+					<p>
+						<b>Star Wars: Episode IX - The Rise of Skywalker</b>
+					</p>
+					<img src="photos\9.jpg" style="height: 100%; width: 100%; object-fit: contain;display:block;margin:auto">
+					</img>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="footer-content">
+				<h3>
+					WebpageMaker
+				</h3>
+				<p>
+					Made with<a href="https://github.com/LorryGailius/WebpageMaker">WebpageMaker</a>
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>

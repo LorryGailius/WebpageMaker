@@ -18,7 +18,7 @@ int getInput(int argc, char **argv, data_t **data, char **title, char **desc, in
     }
     else if (argc == 1)
     {
-        printf("No data file name given! Check \"README.md\" for more information!\n");
+        printf("No data file name given! Check \"README.html\" for more information!\n");
         return 0;
     }
     else
