@@ -11,7 +11,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 // user headers
-#include <logger.h>
 #include <file_utils.h>
 
 // tag indices

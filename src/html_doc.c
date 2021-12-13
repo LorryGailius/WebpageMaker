@@ -31,7 +31,7 @@ const char *attr_table[ATTR_NUM] = {
 attr_t* create_attribute(uint8_t attr_index, const char* value) {
     attr_t *attr = (attr_t*) malloc(sizeof(attr_t));
     if(attr == NULL) {
-        log_msg("create_attribute(): malloc failed, attribute is NULL!");
+        fprintf(stderr, "create_attribute(): malloc failed, attribute is NULL!");
         return NULL;
     }
     attr->attr_index = attr_index;
@@ -39,7 +39,7 @@ attr_t* create_attribute(uint8_t attr_index, const char* value) {
     size_t val_len = strlen(value);
     attr->value = (char*) malloc((val_len + 1) * sizeof(char));
     if(attr->value == NULL) {
-        log_msg("create_attribute(): malloc failed, attribute->value is NULL!");
+        fprintf(stderr, "create_attribute(): malloc failed, attribute->value is NULL!");
     } else {
         memcpy(attr->value, value, val_len + 1);
     }
@@ -55,7 +55,7 @@ void destroy_attribute(attr_t *attribute) {
 elem_t* create_element() {
     elem_t *elem = (elem_t*) malloc(sizeof(elem_t));
     if(elem == NULL) {
-        log_msg("create_element(): malloc failed.");
+        fprintf(stderr, "create_element(): malloc failed.");
         return NULL;
     }
     elem->tag_index = TAG_NONE;
@@ -82,7 +82,7 @@ elem_t* create_text_element(const char* text) {
     size_t len = strlen(text);
     elem->text = (char*) malloc((len + 1) * sizeof(char));
     if(elem->text == NULL) {
-        log_msg("create_text_element(): malloc failed, element text is NULL!");
+        fprintf(stderr, "create_text_element(): malloc failed, element text is NULL!");
     }
     memcpy(elem->text, text, len + 1);
     return elem;
@@ -90,11 +90,11 @@ elem_t* create_text_element(const char* text) {
 
 void push_element_attribute(elem_t *element, attr_t *attribute) {
     if(element->attr_cnt == MAX_ATTRIBUTES) {
-        log_msg("push_element_attribute(): tag element already has a maximum number of attributes!");
+        fprintf(stderr, "push_element_attribute(): tag element already has a maximum number of attributes!");
         return;
     }
     if(element->text != NULL) {
-        log_msg("push_element_attribute(): text element cannot have attributes!");
+        fprintf(stderr, "push_element_attribute(): text element cannot have attributes!");
         return;
     }
     element->attributes[element->attr_cnt++] = attribute;
@@ -102,11 +102,11 @@ void push_element_attribute(elem_t *element, attr_t *attribute) {
 
 void push_element(elem_t *element, elem_t* child) {
     if(element->text != NULL) {
-        log_msg("push_element(): text element cannot have children\n");
+        fprintf(stderr, "push_element(): text element cannot have children\n");
         return;
     }
     if(element->child_cnt == MAX_CHILDREN) {
-        log_msg("push_element(): tag element already has a maximum number of children!\n");
+        fprintf(stderr, "push_element(): tag element already has a maximum number of children!\n");
         return;
     }
     element->children[element->child_cnt++] = child;
@@ -153,7 +153,7 @@ HTML_doc_t* create_doc(
 
     HTML_doc_t *doc = (HTML_doc_t*) malloc(sizeof(HTML_doc_t));
     if(doc == NULL) {
-        log_msg("HTML_doc_t(): malloc failed, function terminated");
+        fprintf(stderr, "HTML_doc_t(): malloc failed, function terminated");
     }
     doc->html = html;
     return doc;
@@ -167,12 +167,12 @@ void destroy_doc(HTML_doc_t *doc) {
 
 void print_doc(HTML_doc_t *doc, FILE *os) {
     if (os == NULL) {
-        log_msg("print_doc(): os is NULL, os set to stdout");
+        fprintf(stderr, "print_doc(): os is NULL, os set to stdout");
         os = stdout;
     }
     fprintf(os, "<!DOCTYPE html>\n");
     if (doc->html == NULL) {
-        log_msg("print_doc(): doc->html is NULL, function terminated");
+        fprintf(stderr, "print_doc(): doc->html is NULL, function terminated");
         return;
     }
     
@@ -181,22 +181,15 @@ void print_doc(HTML_doc_t *doc, FILE *os) {
 
 void print_element(elem_t *element, FILE *const os, uint8_t ident_level) {
     if(element == NULL) {
-        log_msg("print_element(): element is NULL, function terminated!");
+        fprintf(stderr, "print_element(): element is NULL, function terminated!");
         return;
     }
-    
-    // decide if it's a tag or text element
     if(element->text != NULL) {
-        // print idents
-         
+        // it's a text element
         print_idents(ident_level, os);
-        
         fprintf(os, "%s\n", element->text);
         fflush(os);
-    }
-   
-    else {
-        
+    } else {
         // it's a tag
         // print opening tag
         print_idents(ident_level, os);
