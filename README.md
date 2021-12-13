@@ -1,11 +1,11 @@
-# __Web page maker__
+# __Web page maker__ #
 This program allows you to create a custom timeline website
-## __How to use__
+## __How to use__ ##
 When launching this application, provide a data file name as a parameter:
 ```powershell
 ./WebPageMaker.exe data.txt
 ```
-## __Data file format__
+## __Data file format__ ##
 
 **Incorrectly entered data leads to undefined behavior!**  
 **Make sure to read correct data examples below!**
@@ -53,11 +53,12 @@ Timepoint_title3;Timepoint_description3;Timepoint_photo3;
 
 `Timeline Title` and `Timeline Description` can also be left blank (`-;-;`), in result no header will be created.
 
-## __How to build__
-If trying to compile from github repository, CMake is required, use `winget install CMake` in powershell. 
+## __How to build__ ##
+If trying to compile, CMake is required, use `winget install CMake` in powershell. 
 If CMake is already installed run these commands in directory containing **CMakeLists.txt**
 ```powershell
 cmake -D CMAKE_C_COMPILER=<path-to-gcc> -G "MinGW Makefiles" -S . -B build/
 cd build
 mingw32-make
 ```
+
