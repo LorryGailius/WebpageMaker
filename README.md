@@ -54,8 +54,7 @@ Timepoint_title3;Timepoint_description3;Timepoint_photo3;
 `Timeline Title` and `Timeline Description` can also be left blank (`-;-;`), in result no header will be created.
 
 ## __How to build__ ##
-If trying to compile, CMake is required, use `winget install CMake` in powershell. 
-If CMake is already installed run these commands in directory containing **CMakeLists.txt**
+If trying to build from source, [CMake](https://cmake.org/) and [GCC] (https://gcc.gnu.org/) is required If CMake is already installed, run these commands in directory containing **CMakeLists.txt**
 ```powershell
 cmake -D CMAKE_C_COMPILER=<path-to-gcc> -G "MinGW Makefiles" -S . -B build/
 cd build
