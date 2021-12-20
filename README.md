@@ -61,3 +61,4 @@ cd build
 mingw32-make
 ```
 
+Made by [Laurynas Gailius](https://github.com/LorryGailius) and [Arnas Vaicekauskas](https://github.com/LionasBaslis2sis)
