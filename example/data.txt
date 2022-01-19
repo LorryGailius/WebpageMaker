@@ -7,4 +7,4 @@ Star Wars Movie Timeline;-;
 2005;<b>Star Wars: Episode III - Revenge of the Sith</b>;photos\6.jpg;
 2015;<b>Star Wars: Episode VII - The Force Awakens</b>;photos\7.jpg;
 2017;<b>Star Wars: Episode VIII - The Last Jedi</b>;photos\8.jpg;
-2019;<b>Star Wars: Episode IX - The Rise of Skywalker</b>;photos\9.jpg
+2019;<b>Star Wars: Episode IX - The Rise of Skywalker</b>;photos\9.jpg;
