@@ -1,10 +1,6 @@
 # __Web page maker__ #
 This program allows you to create a custom timeline website
 
-<p align="center" max-width = 50% max-height = 50%>
-  <img src="[example/photos/x1.png](https://github.com/LorryGailius/WebpageMaker/blob/main/example/photos/x4.gif)"/>
-</p>
-
 ## __How to use__ ##
 When launching this application, provide a data file name as a parameter:
 ```powershell
