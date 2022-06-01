@@ -1,10 +1,8 @@
 # __Web page maker__ #
 This program allows you to create a custom timeline website
 
-![](https://github.com/LorryGailius/WebpageMaker/blob/main/example/photos/x4.gif)
-
-<p align="center">
-  <img src="[example/photos/x1.png](https://github.com/LorryGailius/WebpageMaker/blob/main/example/photos/x4.gif)" max-width = "50%" max-height = "50%"/>
+<p align="center" max-width = "50%" max-height = "50%">
+  <img src="[example/photos/x1.png](https://github.com/LorryGailius/WebpageMaker/blob/main/example/photos/x4.gif)"/>
 </p>
 
 ## __How to use__ ##
