@@ -1,4 +1,10 @@
 Star Wars Movie Timeline;-;
-1977;Star Wars: Episode IV - New Hope;photos\1.jpg;
-1980;Star Wars: Episode V - The Empire strikes back;photos\2.jpg;
-1983;Star Wars: Episode VI - The Return of the Jedi;photos\3.jpg;
+1977;<b>Star Wars: Episode IV - New Hope</b>;photos\1.jpg;
+1980;<b>Star Wars: Episode V - The Empire strikes back</b>;photos\2.jpg;
+1983;<b>Star Wars: Episode VI - The Return of the Jedi</b>;photos\3.jpg;
+1999;<b>Star Wars: Episode I - The phantom menace</b>;photos\4.jpg;
+2002;<b>Star Wars: Episode II - Attack of the Clones</b>;photos\5.jpg;
+2005;<b>Star Wars: Episode III - Revenge of the Sith</b>;photos\6.jpg;
+2015;<b>Star Wars: Episode VII - The Force Awakens</b>;photos\7.jpg;
+2017;<b>Star Wars: Episode VIII - The Last Jedi</b>;photos\8.jpg;
+2019;<b>Star Wars: Episode IX - The Rise of Skywalker</b>;photos\9.jpg;

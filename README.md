@@ -1,5 +1,8 @@
 # __Web page maker__ #
 This program allows you to create a custom timeline website
+
+![](example/photos/x4.gif)
+
 ## __How to use__ ##
 When launching this application, provide a data file name as a parameter:
 ```powershell
@@ -31,7 +34,7 @@ Timepoint_title3;Timepoint_description3;Timepoint_photo3;
 ...
 ```
 
-![](example\photos)
+![](example/photos/x1.png)
 
 ### Alternate behaviors ###
 Entering a `-` will not show the particular element on a page:
@@ -44,6 +47,8 @@ Timepoint_title2;Timepoint_description2;-;
 ...
 ```
 
+![](example/photos/x2.png)
+
 Leaving all three slots empty `-;-;-;` will move the next time point to the same side as the previous
 ```
 Timeline Title;Timeline Description;
@@ -52,6 +57,8 @@ Timepoint_title1;Timepoint_description1;Timepoint_photo1;
 Timepoint_title3;Timepoint_description3;Timepoint_photo3;
 ...
 ```
+
+![](example/photos/x3.png)
 
 `Timeline Title` and `Timeline Description` can also be left blank (`-;-;`), in result no header will be created.
 
