@@ -3,6 +3,10 @@ This program allows you to create a custom timeline website
 
 ![](https://github.com/LorryGailius/WebpageMaker/blob/main/example/photos/x4.gif)
 
+<p align="center">
+  <img src="[example/photos/x1.png](https://github.com/LorryGailius/WebpageMaker/blob/main/example/photos/x4.gif)" max-width = 50% max-height = 50%/>
+</p>
+
 ## __How to use__ ##
 When launching this application, provide a data file name as a parameter:
 ```powershell
@@ -34,7 +38,9 @@ Timepoint_title3;Timepoint_description3;Timepoint_photo3;
 ...
 ```
 
-![](example/photos/x1.png)
+<p align="center">
+  <img src="example/photos/x1.png" />
+</p>
 
 ### Alternate behaviors ###
 Entering a `-` will not show the particular element on a page:
@@ -47,7 +53,9 @@ Timepoint_title2;Timepoint_description2;-;
 ...
 ```
 
-![](example/photos/x2.png)
+<p align="center">
+  <img src="example/photos/x2.png" />
+</p>
 
 Leaving all three slots empty `-;-;-;` will move the next time point to the same side as the previous
 ```
@@ -58,7 +66,9 @@ Timepoint_title3;Timepoint_description3;Timepoint_photo3;
 ...
 ```
 
-![](example/photos/x3.png)
+<p align="center">
+  <img src="example/photos/x3.png" />
+</p>
 
 `Timeline Title` and `Timeline Description` can also be left blank (`-;-;`), in result no header will be created.
 
