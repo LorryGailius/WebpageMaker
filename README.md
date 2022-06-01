@@ -31,6 +31,8 @@ Timepoint_title3;Timepoint_description3;Timepoint_photo3;
 ...
 ```
 
+![](\example\photos)
+
 ### Alternate behaviors ###
 Entering a `-` will not show the particular element on a page:
 ```
