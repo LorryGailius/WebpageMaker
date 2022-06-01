@@ -1,7 +1,7 @@
 # __Web page maker__ #
 This program allows you to create a custom timeline website
 
-![](example/photos/x4.gif)
+![](https://github.com/LorryGailius/WebpageMaker/blob/main/example/photos/x4.gif)
 
 ## __How to use__ ##
 When launching this application, provide a data file name as a parameter:
